@@ -27,6 +27,6 @@ jobs:
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@v12.8.0
         with:
-          args: deploy --only hosting:latam-landing --project=development
+          args: deploy --only hosting:latam-landing --project=ihub-projects-developmen-af75f
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_DEV }}
