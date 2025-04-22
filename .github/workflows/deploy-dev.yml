@@ -21,12 +21,19 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Use Firebase environment
+        uses: w9jds/firebase-action@v12.8.0
+        with:
+          args: use development
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_DEV }}
+
       - name: Build
         run: npm run build:dev
 
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@v12.8.0
         with:
-          args: deploy --only hosting:latam-landing --project=ihub-projects-developmen-af75f
+          args: deploy --only hosting:latam-landing
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_DEV }}

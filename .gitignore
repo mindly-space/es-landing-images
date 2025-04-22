@@ -29,7 +29,6 @@ dist-ssr
 .firebase/
 firebase-debug.log*
 firebase-debug.*.log*
-.firebaserc
 ui-debug.log*
 
 # Environment files
