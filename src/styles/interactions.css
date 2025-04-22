@@ -1,0 +1,32 @@
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.step-active {
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+}
+
+.step-inactive {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+}
