@@ -1,0 +1,18 @@
+
+@import './styles/base.css';
+@import './styles/responsive.css';
+@import './styles/animations.css';
+@import './styles/interactions.css';
+
+/* Add smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* This ensures headers are visible when scrolling to sections */
+}
+
+/* For mobile screens, adjust the padding to account for smaller header */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+}

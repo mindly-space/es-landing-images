@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "development": "ihub-projects-developmen-af75f",
+    "production": "ihub-projects-production"
+  },
+  "targets": {
+    "ihub-projects-developmen-af75f": {
+      "hosting": {
+        "latam-landing": [
+          "latam-landing"
+        ]
+      }
+    },
+    "ihub-projects-production": {
+      "hosting": {
+        "latam-landing-25afc": [
+          "latam-landing-25afc"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
