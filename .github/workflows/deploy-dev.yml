@@ -24,7 +24,7 @@ jobs:
       - name: Use Firebase environment
         uses: w9jds/firebase-action@v12.8.0
         with:
-          args: use ihub-projects-developmen-af75f
+          args: use development
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_DEV }}
 
