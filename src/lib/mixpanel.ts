@@ -4,6 +4,7 @@ import mixpanel from "mixpanel-browser";
 mixpanel.init(import.meta.env.VITE_MIXPANEL_TOKEN || "", {
   debug: import.meta.env.DEV,
   track_pageview: false,
+  // record_sessions_percent: 100,
 });
 
 // Event types
