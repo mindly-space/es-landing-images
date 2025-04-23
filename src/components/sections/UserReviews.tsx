@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { type CarouselApi } from "@/components/ui/carousel";
@@ -25,15 +24,18 @@ export const UserReviews = () => {
   const reviews = Object.values(reviewsData).slice(0, 5);
 
   return (
-    <section id="reviews" className="w-full max-w-[1328px] mt-24 max-md:max-w-full max-md:mt-10 max-md:px-0">
+    <section
+      id="reviews"
+      className="w-full max-w-[1328px] mt-24 max-md:max-w-full max-md:mt-10 max-md:px-0"
+    >
       <h2 className="text-center text-[48px] leading-[120%] font-dela text-[#212121] max-md:text-[36px] max-md:px-4">
-        {isEnglish 
-          ? "What people in therapy with Mindly are saying" 
+        {isEnglish
+          ? "What people in therapy with Mindly are saying"
           : "Reseñas de usuarios de Mindly"}
       </h2>
 
       {isMobile ? (
-        <MobileReviewsCarousel 
+        <MobileReviewsCarousel
           reviews={reviews}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
@@ -41,7 +43,7 @@ export const UserReviews = () => {
           setCarouselApi={setCarouselApi}
         />
       ) : (
-        <DesktopReviewsCarousel 
+        <DesktopReviewsCarousel
           reviews={reviews}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}

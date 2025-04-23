@@ -1,10 +1,9 @@
-
 import React, { useEffect } from "react";
-import { 
-  Carousel, 
-  CarouselContent, 
+import {
+  Carousel,
+  CarouselContent,
   CarouselItem,
-  type CarouselApi
+  type CarouselApi,
 } from "@/components/ui/carousel";
 import { ReviewCard } from "./ReviewCard";
 
@@ -21,7 +20,7 @@ export const DesktopReviewsCarousel: React.FC<DesktopReviewsCarouselProps> = ({
   activeIndex,
   setActiveIndex,
   carouselApi,
-  setCarouselApi
+  setCarouselApi,
 }) => {
   // Group reviews for desktop view (3 per page)
   const groupedReviews = [];
@@ -32,14 +31,15 @@ export const DesktopReviewsCarousel: React.FC<DesktopReviewsCarouselProps> = ({
   // Set up auto-scrolling every 4 seconds
   useEffect(() => {
     if (!carouselApi) return;
-    
+
     const autoplayInterval = setInterval(() => {
-      const nextGroupIndex = (Math.floor(activeIndex / 3) + 1) % groupedReviews.length;
+      const nextGroupIndex =
+        (Math.floor(activeIndex / 3) + 1) % groupedReviews.length;
       const nextIndex = nextGroupIndex * 3;
       setActiveIndex(nextIndex);
       carouselApi.scrollTo(nextGroupIndex);
     }, 4000);
-    
+
     return () => clearInterval(autoplayInterval);
   }, [carouselApi, activeIndex, groupedReviews.length, setActiveIndex]);
 
@@ -63,8 +63,8 @@ export const DesktopReviewsCarousel: React.FC<DesktopReviewsCarouselProps> = ({
 
   return (
     <div className="mt-10">
-      <Carousel 
-        className="w-full" 
+      <Carousel
+        className="w-full"
         opts={{ loop: true }}
         setApi={setCarouselApi}
       >
@@ -73,10 +73,10 @@ export const DesktopReviewsCarousel: React.FC<DesktopReviewsCarouselProps> = ({
             <CarouselItem key={groupIndex} className="basis-full">
               <div className="flex w-full gap-6 flex-wrap lg:flex-nowrap">
                 {group.map((review, index) => (
-                  <ReviewCard 
-                    key={index} 
-                    review={review} 
-                    index={index + groupIndex * 3} 
+                  <ReviewCard
+                    key={index}
+                    review={review}
+                    index={index + groupIndex * 3}
                   />
                 ))}
               </div>
@@ -84,7 +84,7 @@ export const DesktopReviewsCarousel: React.FC<DesktopReviewsCarouselProps> = ({
           ))}
         </CarouselContent>
       </Carousel>
-      
+
       <div className="mt-6 flex justify-center space-x-2">
         {groupedReviews.map((_, groupIndex) => (
           <button
