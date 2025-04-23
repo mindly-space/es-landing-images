@@ -51,4 +51,4 @@ storybook-static/
 *.pem
 .vercel
 .cache
-*.tsbuildinfo 
+*.tsbuildinfo node_modules/
