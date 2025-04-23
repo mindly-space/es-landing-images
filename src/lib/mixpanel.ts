@@ -1,7 +1,7 @@
 import mixpanel from "mixpanel-browser";
 
 // Initialize mixpanel
-mixpanel.init(import.meta.env.VITE_MIXPANEL_TOKEN || "", {
+mixpanel.init(import.meta.env.VITE_MIXPANEL_API_KEY || "", {
   debug: import.meta.env.DEV,
   track_pageview: false,
   // record_sessions_percent: 100,
