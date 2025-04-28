@@ -1,15 +1,10 @@
 
 import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Review } from "@/types/reviews";
 
 interface ReviewCardProps {
-  review: {
-    client_avatar: string;
-    client_first_name: string;
-    client_last_name: string;
-    review_rating: number;
-    text_of_review: string;
-  };
+  review: Review;
   index: number;
 }
 
@@ -26,11 +21,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review, index }) => {
             className="object-cover"
           />
           <AvatarFallback>
-            {review.client_first_name[0]}
+            {review.client_first_name ? review.client_first_name[0] : "?"}
           </AvatarFallback>
         </Avatar>
         <span className="font-semibold">
-          {review.client_first_name} {review.client_last_name[0]}.
+          {review.client_first_name} {review.client_last_name?.[0] ?? ''}.
         </span>
       </div>
       <div className="flex mb-3">

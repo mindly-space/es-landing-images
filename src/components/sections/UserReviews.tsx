@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { type CarouselApi } from "@/components/ui/carousel";
 import { MobileReviewsCarousel } from "./reviews/MobileReviewsCarousel";
 import { DesktopReviewsCarousel } from "./reviews/DesktopReviewsCarousel";
 import { reviewsData } from "./reviews/reviewsData";
-import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import { getRandomReviews } from "@/utils/getRandomReviews";
 
 export const UserReviews = () => {
   const isMobile = useIsMobile();
@@ -14,14 +14,21 @@ export const UserReviews = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
 
   // This effect syncs the carousel with the activeIndex state
-  useEffect(() => {
-    if (carouselApi) {
-      carouselApi.scrollTo(activeIndex);
-    }
-  }, [carouselApi, activeIndex]);
+  // useEffect(() => {
+  //   if (carouselApi) {
+  //     carouselApi.scrollTo(activeIndex);
+  //   }
+  // }, [carouselApi, activeIndex]);
+
+  // Convert reviews from object to array and get random reviews based on view
+  const allReviews = Object.values(reviewsData);
+  const displayedReviews = useMemo(() => {
+    const count = isMobile ? 4 : 12;
+    return getRandomReviews(allReviews, count);
+  }, [isMobile, allReviews]);
 
   // Get the first 5 reviews
-  const reviews = Object.values(reviewsData).slice(0, 5);
+  // const reviews = Object.values(reviewsData).slice(0, 5);
 
   return (
     <section
@@ -36,7 +43,7 @@ export const UserReviews = () => {
 
       {isMobile ? (
         <MobileReviewsCarousel
-          reviews={reviews}
+          reviews={displayedReviews}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           carouselApi={carouselApi}
@@ -44,7 +51,7 @@ export const UserReviews = () => {
         />
       ) : (
         <DesktopReviewsCarousel
-          reviews={reviews}
+          reviews={displayedReviews}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           carouselApi={carouselApi}
