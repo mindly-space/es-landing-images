@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import { HeaderTopBanner } from "./HeaderTopBanner";
 import { Logo } from "./Logo";
@@ -5,15 +6,12 @@ import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 import { LanguageSelector } from "./LanguageSelector";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { useAnalytics } from "@/hooks/useAnalytics";
-import { EventName } from "@/lib/mixpanel";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const { isEnglish, setIsEnglish } = useContext(LanguageContext);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { track } = useAnalytics();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,9 +22,9 @@ export const Header = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -40,63 +38,35 @@ export const Header = () => {
     language: isEnglish ? "English" : "Español",
   };
 
-  const ctaLink =
-    "https://mindlyspace.com/c91f92cj77?utm_source=website&utm_medium=website&utm_funnel=ESP-241024-US-main-v1";
-
-  const handleLanguageChange = (newIsEnglish: boolean) => {
-    setIsEnglish(newIsEnglish);
-    track(EventName.LANGUAGE_BUTTON_CLICKED, {
-      language: newIsEnglish ? "en" : "es",
-    });
-  };
-
-  const handleHeaderButtonClick = (eventName: EventName) => {
-    track(eventName);
-  };
-
-  const handleMenuButtonClick = () => {
-    setIsOpen(!isOpen);
-    if (!isOpen) {
-      track(EventName.MENU_BUTTON_CLICKED);
-    }
-  };
+  const ctaLink = "https://mindlyspace.com/c91f92cj77?utm_source=website&utm_medium=website&utm_funnel=ESP-241024-US-main-v1";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
       <HeaderTopBanner />
-
-      <div
-        className={`bg-white ${
-          isScrolled ? "shadow-sm" : ""
-        } flex min-h-[70px] md:min-h-24 w-full items-center gap-5 md:gap-5 text-sm text-[#212121] font-normal leading-[1.4] justify-between px-4 md:px-8 lg:px-14 py-3 md:py-4 lg:py-6 whitespace-nowrap overflow-hidden`}
-      >
+      
+      <div className={`bg-white ${isScrolled ? 'shadow-sm' : ''} flex min-h-[70px] md:min-h-24 w-full items-center gap-5 md:gap-5 text-sm text-[#212121] font-normal leading-[1.4] justify-between px-4 md:px-8 lg:px-14 py-3 md:py-4 lg:py-6 whitespace-nowrap overflow-hidden`}>
         {/* Logo - positioned on the left for all screen sizes */}
         <Logo />
-
+        
         {/* Mobile menu trigger - positioned on the right */}
-        <MobileMenu
+        <MobileMenu 
           isOpen={isOpen}
-          setIsOpen={handleMenuButtonClick}
+          setIsOpen={setIsOpen}
           isLangOpen={isLangOpen}
           setIsLangOpen={setIsLangOpen}
           isEnglish={isEnglish}
-          setIsEnglish={handleLanguageChange}
+          setIsEnglish={setIsEnglish}
           translations={translations}
           ctaLink={ctaLink}
-          onNavClick={handleHeaderButtonClick}
         />
-
+        
         {/* Desktop navigation menu */}
-        <DesktopMenu
-          translations={translations}
-          ctaLink={ctaLink}
-          onNavClick={handleHeaderButtonClick}
-        />
-
+        <DesktopMenu translations={translations} ctaLink={ctaLink} />
+        
         {/* Desktop language selector */}
-        <LanguageSelector
+        <LanguageSelector 
           isEnglish={isEnglish}
-          setIsEnglish={handleLanguageChange}
+          setIsEnglish={setIsEnglish}
           languageText={translations.language}
           isMobile={false}
         />

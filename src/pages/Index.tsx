@@ -1,3 +1,5 @@
+
+import React from "react";
 import { Header } from "@/components/layout";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
@@ -16,8 +18,7 @@ import { HowWeChooseSpecialist } from "@/components/sections/HowWeChooseSpeciali
 import { PressAboutUs } from "@/components/sections/PressAboutUs";
 
 const Index = () => {
-  return (
-    <div className="bg-white flex flex-col overflow-hidden items-center pb-7">
+  return <div className="bg-white flex flex-col overflow-hidden items-center pb-7">
       <Header />
       <main className="w-full max-w-[1400px] px-4 pt-24 xl:max-w-none xl:px-8">
         <div className="flex flex-col items-center">
@@ -46,7 +47,6 @@ const Index = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
 export default Index;

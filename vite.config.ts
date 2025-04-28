@@ -12,13 +12,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    imagetools({
-      defaultDirectives: new URLSearchParams([
-        ['format', 'webp'],
-        ['quality', '80'],
-        ['w', '800']
-      ])
-    }),
+    imagetools(), // Removed default directives
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
