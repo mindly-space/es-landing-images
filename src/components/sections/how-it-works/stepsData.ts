@@ -6,7 +6,7 @@ export const stepsData: Step[] = [
     id: 1,
     titleEnglish: "Take the therapist matching quiz",
     titleSpanish: "Realiza el test para encontrar a psicólog@.",
-    image: "/lovable-uploads/175f0e7d-3ca3-4af3-96e0-830866139556.png"
+    image: "/lovable-uploads/c0796ddb-71c2-492e-86a2-66f69a2ccbe7.png"
   },
   {
     id: 2,

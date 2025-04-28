@@ -8,10 +8,10 @@ export function useAnalytics() {
 
   // Helper function to track events with current language
   const track = (event: EventName, extraProperties?: TrackProperties) => {
-    MixpanelService.track(event, {
-      language,
-      ...extraProperties,
-    });
+    // MixpanelService.track(event, {
+    //   language,
+    //   ...extraProperties,
+    // });
   };
 
   return {

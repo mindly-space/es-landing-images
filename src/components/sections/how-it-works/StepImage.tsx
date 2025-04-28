@@ -30,11 +30,11 @@ export const StepImage = ({ activeStep, steps, onSwipe }: StepImageProps) => {
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     if (info.offset.x < -50) {
       const nextStep = activeStep === steps.length ? 1 : activeStep + 1;
-      onSwipe && onSwipe(nextStep);
+      onSwipe?.(nextStep);
     }
     else if (info.offset.x > 50) {
       const prevStep = activeStep === 1 ? steps.length : activeStep - 1;
-      onSwipe && onSwipe(prevStep);
+      onSwipe?.(prevStep);
     }
   };
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { type CarouselApi } from "@/components/ui/carousel";
 import { MobileReviewsCarousel } from "./reviews/MobileReviewsCarousel";
@@ -6,32 +6,31 @@ import { DesktopReviewsCarousel } from "./reviews/DesktopReviewsCarousel";
 import { reviewsData } from "./reviews/reviewsData";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { getRandomReviews } from "@/utils/getRandomReviews";
+import { Review } from "@/types/reviews";
 
 export const UserReviews = () => {
   const isMobile = useIsMobile();
+  const isMobileMode = useRef(false);
   const { isEnglish } = useContext(LanguageContext);
   const [activeIndex, setActiveIndex] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
-
-  // This effect syncs the carousel with the activeIndex state
-  // useEffect(() => {
-  //   if (carouselApi) {
-  //     carouselApi.scrollTo(activeIndex);
-  //   }
-  // }, [carouselApi, activeIndex]);
+  const [displayedReviews, setDisplayedReviews] = useState<Review[]>([]);
 
   // Convert reviews from object to array and get random reviews based on view
   const allReviews = Object.values(reviewsData);
-  const displayedReviews = useMemo(() => {
-    const count = isMobile ? 4 : 12;
-    return getRandomReviews(allReviews, count);
-  }, [isMobile, allReviews]);
 
-  // Get the first 5 reviews
-  // const reviews = Object.values(reviewsData).slice(0, 5);
+  useEffect(() => {
+    if (isMobile !== isMobileMode.current || !displayedReviews.length) {
+      const count = isMobile ? 4 : 12;
+      const res = getRandomReviews(allReviews, count);
+      isMobileMode.current = isMobile;
+      setDisplayedReviews(res);
+    }
+  }, [isMobile, allReviews, displayedReviews]);
 
   return (
     <section
+      key={displayedReviews.length}
       id="reviews"
       className="w-full max-w-[1328px] mt-24 max-md:max-w-full max-md:mt-10 max-md:px-0"
     >
