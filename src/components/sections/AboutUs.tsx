@@ -25,7 +25,7 @@ export const AboutUs = () => {
         
         <div className="w-full flex flex-col md:flex-row items-center gap-8 md:gap-[80px] mb-8">
           <div className="md:w-1/2">
-            <img src="/lovable-uploads/0d2069aa-b849-409f-ab99-711741fd6f68.png?format=webp&quality=80" alt="Terapeuta en línea" className="w-full rounded-lg" />
+            <img src="/lovable-uploads/0d2069aa-b849-409f-ab99-711741fd6f68.png?format=webp&quality=80" alt={`${isEnglish ? "Online therapy" : "Terapeuta en línea"}`} className="w-full rounded-lg" />
           </div>
           
           <div className="md:w-1/2 text-[18px] max-md:text-[16px] space-y-4">
