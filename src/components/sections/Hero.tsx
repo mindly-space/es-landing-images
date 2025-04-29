@@ -42,11 +42,11 @@ export const Hero = () => {
       animate="visible"
       variants={containerVariants}
       className={`bg-[rgba(1,58,89,1)] w-full p-10 rounded-[32px] max-md:p-6 max-md:max-w-full max-md:h-auto xl:max-w-none flex items-center my-10 ${
-        isMobile ? "min-h-fit" : "min-h-fit"
+        isMobile ? "min-h-fit" : "h-[80vh]"
       } overflow-hidden`}
     >
       <div
-        className={`gap-5 flex ${
+        className={`h-[67vh] gap-5 flex ${
           isMobile ? "flex-col" : ""
         } items-stretch max-md:w-full w-full max-w-[1328px] mx-auto xl:max-w-none xl:px-0 xl:justify-between`}
       >
@@ -86,31 +86,19 @@ export const Hero = () => {
         {!isMobile && (
           <motion.div
             variants={itemVariants}
-            className="w-[24%] max-md:w-full flex flex-col gap-6 items-center p-0 xl:w-[24%] px-4 py-[24px] h-fit"
+            className="w-[24%] max-md:w-full flex flex-col justify-between items-center p-0 xl:w-[24%]"
           >
-            <div className="w-full max-w-[320px] flex items-center justify-center">
-              <motion.div variants={imageVariants} className="w-full h-full">
-                <AspectRatio ratio={1 / 1} className="w-full">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fb9c649bad98d4e1faf236bc2d90887c6?format=webp&quality=80"
-                    alt="Therapy Session 1"
-                    className="object-contain w-full h-full"
-                  />
-                </AspectRatio>
-              </motion.div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fb9c649bad98d4e1faf236bc2d90887c6?format=webp&quality=80"
+              alt="Therapy Session 1"
+              className="object-contain w-full h-[45%]"
+            />
 
-            <div className="w-full max-w-[320px] flex items-center justify-center">
-              <motion.div variants={imageVariants} className="w-full h-full">
-                <AspectRatio ratio={1 / 1} className="w-full">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fdfdbbb2716b14f928e6c05e9cdf2fe7b?format=webp&quality=80"
-                    alt="Happy family together"
-                    className="object-contain w-full h-full"
-                  />
-                </AspectRatio>
-              </motion.div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fdfdbbb2716b14f928e6c05e9cdf2fe7b?format=webp&quality=80"
+              alt="Happy family together"
+              className="object-contain w-full h-[45%]"
+            />
           </motion.div>
         )}
 
@@ -124,7 +112,7 @@ export const Hero = () => {
             <div className="flex w-full flex-col text-white font-normal text-center">
               <motion.h1
                 variants={itemVariants}
-                className="text-[36px] leading-[120%] font-dela text-center max-md:text-[28px] max-md:leading-[120%]"
+                className="text-[36px] leading-[120%] font-delay text-center max-md:text-[28px] max-md:leading-[120%]"
               >
                 {isEnglish
                   ? "Mindly — your best online therapist. Therapy made easier than ever"
@@ -166,31 +154,19 @@ export const Hero = () => {
         {!isMobile && (
           <motion.div
             variants={itemVariants}
-            className="w-[24%] max-md:w-full flex flex-col gap-6 items-center p-0 xl:w-[24%] px-4 py-[24px] h-fit"
+            className="w-[24%] max-md:w-full flex flex-col justify-between items-center p-0 xl:w-[24%]"
           >
-            <div className="w-full max-w-[320px] flex items-center justify-center">
-              <motion.div variants={imageVariants} className="w-full h-full">
-                <AspectRatio ratio={1 / 1} className="w-full">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fc6cd6633a48f47b98618430d274206d7?format=webp&quality=80"
-                    alt="Therapy Session 3"
-                    className="object-contain w-full h-full"
-                  />
-                </AspectRatio>
-              </motion.div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fc6cd6633a48f47b98618430d274206d7?format=webp&quality=80"
+              alt="Therapy Session 3"
+              className="object-contain w-full h-[45%]"
+            />
 
-            <div className="w-full max-w-[320px] flex items-center justify-center">
-              <motion.div variants={imageVariants} className="w-full h-full">
-                <AspectRatio ratio={1 / 1} className="w-full">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F6b5f87eaf212420da25edcc0636d5ff8?format=webp&quality=80"
-                    alt="Therapy Session 4"
-                    className="object-contain w-full h-full"
-                  />
-                </AspectRatio>
-              </motion.div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F6b5f87eaf212420da25edcc0636d5ff8?format=webp&quality=80"
+              alt="Therapy Session 4"
+              className="object-contain w-full h-[45%]"
+            />
           </motion.div>
         )}
       </div>
