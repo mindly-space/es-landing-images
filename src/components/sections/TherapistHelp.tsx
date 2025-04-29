@@ -23,26 +23,26 @@ export const TherapistHelp = () => {
       viewport={{
         once: true
       }} 
-      className="w-full max-w-[1328px] bg-[#f5fbff] rounded-[40px] flex flex-col items-center py-16 px-6 md:px-12 mt-10 mb-20 relative overflow-hidden therapist-help-section"
+      className={`w-full max-w-[1328px] bg-[#f5fbff] rounded-[40px] flex ${isMobile ? "flex-col" : "flex-row"} ${isMobile ? 'items-center' : 'justify-center items-start'} ${isMobile ? 'md:px-12' : 'md:px-6' } py-16 px-6 mt-10 mb-20 relative overflow-hidden therapist-help-section`}
     >
       {/* Mobile images at the top */}
       {isMobile && <MobileImages position="top" />}
       
       {/* Left side images - positioned outside text area (desktop only) */}
       {!isMobile && (
-        <div className="absolute top-0 left-0 w-[120px] h-full pointer-events-none px-2">
+        <div className={`w-[120px] h-full pointer-events-none px-2 ${!isMobile ? 'h-[340px]' : ''}`}>
           <DesktopImages position="left" />
         </div>
       )}
       
       {/* Main content area with proper spacing */}
-      <div className="w-full max-w-[800px] mx-auto relative z-10">
+      <div className="w-full max-w-[800px] relative z-10">
         <ContentSection />
       </div>
       
       {/* Right side images - positioned outside text area (desktop only) */}
       {!isMobile && (
-        <div className="absolute top-0 right-0 w-[120px] h-full pointer-events-none px-2">
+        <div className={`w-[120px] h-full pointer-events-none px-2 ${!isMobile ? 'h-[340px]' : ''}`}>
           <DesktopImages position="right" />
         </div>
       )}

@@ -6,8 +6,10 @@ import { MessageSquare } from "lucide-react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { EventName } from "@/lib/mixpanel";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const ContentSection: React.FC = () => {
+  const isMobile = useIsMobile();
   const { isEnglish } = useContext(LanguageContext);
   const { track } = useAnalytics();
 
@@ -39,7 +41,7 @@ export const ContentSection: React.FC = () => {
   const whatsAppButtonEnglish = "Chat on WhatsApp";
 
   return (
-    <div className="w-full max-w-full mx-auto px-4 md:px-16 flex flex-col items-center pt-2 mt-20px md:mt-5 relative z-10">
+    <div className={`w-full max-w-full mx-auto px-4 flex flex-col items-center relative z-10 ${isMobile ? 'md:px-16 pt-2 mt-20px md:mt-5' : ''}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +78,7 @@ export const ContentSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         viewport={{ once: true }}
-        className="z-10 mb-10 flex flex-col md:flex-row gap-4 w-full justify-center md:px-20 px-0"
+        className={`z-10 mb-10 flex flex-col md:flex-row gap-4 w-full justify-center items-center px-0 ${isMobile ? 'md:px-20' : ''}`}
       >
         <Button
           className="w-full md:w-auto bg-[#029CEE] hover:bg-[#0288D1] text-white rounded-[40px] h-[52px] px-6 md:px-12 py-3.5 text-base font-semibold transition-colors duration-300 font-inter"

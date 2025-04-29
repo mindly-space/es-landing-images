@@ -24,7 +24,7 @@ export const AppDownload = () => {
       <div className="relative w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
         <div className="w-full max-w-[564.56px] h-auto aspect-[564.56/640] relative">
           <img
-            src="/lovable-uploads/85edd7ba-fca9-4007-9d16-30ce3c9055f9.png?format=webp&quality=80"
+            src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fcf3186bb14a94e529b70cb764b7d0f95?format=webp&quality=80"
             alt="Mindly app screenshot"
             className="w-full h-full object-contain z-10 relative"
           />

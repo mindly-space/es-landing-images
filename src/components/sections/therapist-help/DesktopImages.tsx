@@ -1,7 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
+import { useIsMobile } from "@/hooks/use-mobile";
 type ImagePosition = "left" | "right";
 
 interface DesktopImagesProps {
@@ -10,6 +10,8 @@ interface DesktopImagesProps {
 
 export const DesktopImages: React.FC<DesktopImagesProps> = ({ position }) => {
   // Array of new therapist images
+  const isMobile = useIsMobile();
+
   const therapistImages = [
     "/lovable-uploads/c109f271-20d7-4a6c-8f0f-fdc092d9ff78.png", // First image
     "/lovable-uploads/b605950f-f932-4530-80f1-f4c6f17d2750.png", // Second image
@@ -19,7 +21,7 @@ export const DesktopImages: React.FC<DesktopImagesProps> = ({ position }) => {
 
   if (position === "left") {
     return (
-      <div className="h-full flex flex-col justify-around items-center pointer-events-none">
+      <div className={`h-full flex flex-col ${isMobile ? 'justify-around' : 'justify-between'} items-center pointer-events-none`}>
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -52,7 +54,7 @@ export const DesktopImages: React.FC<DesktopImagesProps> = ({ position }) => {
   }
 
   return (
-    <div className="h-full flex flex-col justify-around items-center pointer-events-none">
+    <div className={`h-full flex flex-col ${isMobile ? 'justify-around' : 'justify-between'} items-center pointer-events-none`}>
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
