@@ -1,30 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { type CarouselApi } from "@/components/ui/carousel";
 import { MobileReviewsCarousel } from "./reviews/MobileReviewsCarousel";
 import { DesktopReviewsCarousel } from "./reviews/DesktopReviewsCarousel";
 import { reviewsData } from "./reviews/reviewsData";
-import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import { getRandomReviews } from "@/utils/getRandomReviews";
+import { Review } from "@/types/reviews";
 
 export const UserReviews = () => {
   const isMobile = useIsMobile();
+  const isMobileMode = useRef(false);
   const { isEnglish } = useContext(LanguageContext);
   const [activeIndex, setActiveIndex] = useState(0);
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
+  const [displayedReviews, setDisplayedReviews] = useState<Review[]>([]);
 
-  // This effect syncs the carousel with the activeIndex state
+  // Convert reviews from object to array and get random reviews based on view
+  const allReviews = Object.values(reviewsData);
+
   useEffect(() => {
-    if (carouselApi) {
-      carouselApi.scrollTo(activeIndex);
+    if (isMobile !== isMobileMode.current || !displayedReviews.length) {
+      const count = isMobile ? 4 : 12;
+      const res = getRandomReviews(allReviews, count);
+      isMobileMode.current = isMobile;
+      setDisplayedReviews(res);
     }
-  }, [carouselApi, activeIndex]);
-
-  // Get the first 5 reviews
-  const reviews = Object.values(reviewsData).slice(0, 5);
+  }, [isMobile, allReviews, displayedReviews]);
 
   return (
     <section
+      key={displayedReviews.length}
       id="reviews"
       className="w-full max-w-[1328px] mt-24 max-md:max-w-full max-md:mt-10 max-md:px-0"
     >
@@ -36,7 +42,7 @@ export const UserReviews = () => {
 
       {isMobile ? (
         <MobileReviewsCarousel
-          reviews={reviews}
+          reviews={displayedReviews}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           carouselApi={carouselApi}
@@ -44,7 +50,7 @@ export const UserReviews = () => {
         />
       ) : (
         <DesktopReviewsCarousel
-          reviews={reviews}
+          reviews={displayedReviews}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
           carouselApi={carouselApi}

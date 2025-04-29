@@ -52,7 +52,7 @@ export const StepItem: React.FC<StepItemProps> = ({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       whileHover={{ scale: 1.01 }}
-      className={`step-item p-6 rounded-xl transition-all cursor-pointer relative ${
+      className={`${isMobile ? "h-[94px]" : ""} step-item p-6 rounded-xl transition-all cursor-pointer relative ${
         isActive ? "bg-white" : "bg-blue-800/20 hover:bg-blue-800/30"
       }`}
     >

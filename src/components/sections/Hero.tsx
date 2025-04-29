@@ -60,7 +60,7 @@ export const Hero = () => {
             >
               <AspectRatio ratio={1 / 1} className="w-full h-full">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/ad85a15d3e71fec6d16c3bd833258013914a103d?format=webp&quality=80"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fb9c649bad98d4e1faf236bc2d90887c6?format=webp&quality=80"
                   alt="Therapy Session"
                   className="object-contain w-full h-full transform hover:scale-105 transition-transform duration-300"
                 />
@@ -74,7 +74,7 @@ export const Hero = () => {
             >
               <AspectRatio ratio={1 / 1} className="w-full h-full">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/29a2418c61791e17b8e22a5e39f2ab9375c4f3a3?format=webp&quality=80"
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fdfdbbb2716b14f928e6c05e9cdf2fe7b?format=webp&quality=80"
                   alt="Therapy Session 2"
                   className="object-contain w-full h-full transform hover:scale-105 transition-transform duration-300"
                 />
@@ -92,7 +92,7 @@ export const Hero = () => {
               <motion.div variants={imageVariants} className="w-full h-full">
                 <AspectRatio ratio={1 / 1} className="w-full">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/ad85a15d3e71fec6d16c3bd833258013914a103d?format=webp&quality=80"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fad85a15d3e71fec6d16c3bd833258013914a103d?format=webp&quality=80"
                     alt="Therapy Session 1"
                     className="object-contain w-full h-full"
                   />
@@ -104,7 +104,7 @@ export const Hero = () => {
               <motion.div variants={imageVariants} className="w-full h-full">
                 <AspectRatio ratio={1 / 1} className="w-full">
                   <img
-                    src="/lovable-uploads/66541b39-7151-43c8-afd3-a3bb680fde85.png?format=webp&quality=80"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fdfdbbb2716b14f928e6c05e9cdf2fe7b?format=webp&quality=80"
                     alt="Happy family together"
                     className="object-contain w-full h-full"
                   />
@@ -172,7 +172,7 @@ export const Hero = () => {
               <motion.div variants={imageVariants} className="w-full h-full">
                 <AspectRatio ratio={1 / 1} className="w-full">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/29a2418c61791e17b8e22a5e39f2ab9375c4f3a3?format=webp&quality=80"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fc6cd6633a48f47b98618430d274206d7?format=webp&quality=80"
                     alt="Therapy Session 3"
                     className="object-contain w-full h-full"
                   />
@@ -184,7 +184,7 @@ export const Hero = () => {
               <motion.div variants={imageVariants} className="w-full h-full">
                 <AspectRatio ratio={1 / 1} className="w-full">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/3d94ff675990516699cb6611c17cb12d61278553?format=webp&quality=80"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F6b5f87eaf212420da25edcc0636d5ff8?format=webp&quality=80"
                     alt="Therapy Session 4"
                     className="object-contain w-full h-full"
                   />
