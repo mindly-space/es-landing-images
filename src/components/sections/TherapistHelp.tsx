@@ -30,7 +30,7 @@ export const TherapistHelp = () => {
       
       {/* Left side images - positioned outside text area (desktop only) */}
       {!isMobile && (
-        <div className={`w-[120px] h-full pointer-events-none px-2 ${!isMobile ? 'h-[340px]' : ''}`}>
+        <div className={`w-[120px] pointer-events-none px-2 ${!isMobile ? 'h-[340px]' : 'h-full'}`}>
           <DesktopImages position="left" />
         </div>
       )}
@@ -42,7 +42,7 @@ export const TherapistHelp = () => {
       
       {/* Right side images - positioned outside text area (desktop only) */}
       {!isMobile && (
-        <div className={`w-[120px] h-full pointer-events-none px-2 ${!isMobile ? 'h-[340px]' : ''}`}>
+        <div className={`w-[120px] pointer-events-none px-2 ${!isMobile ? 'h-[340px]' : 'h-full'}`}>
           <DesktopImages position="right" />
         </div>
       )}

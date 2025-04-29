@@ -251,6 +251,7 @@ export const Footer = () => {
                 }}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="flex items-center justify-center"
               >
                 <Facebook className="w-5 h-5 text-hsl(var(--foreground))" />
               </a>
