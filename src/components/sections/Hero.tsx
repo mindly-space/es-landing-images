@@ -42,7 +42,7 @@ export const Hero = () => {
       animate="visible"
       variants={containerVariants}
       className={`bg-[rgba(1,58,89,1)] w-full p-10 rounded-[32px] max-md:p-6 max-md:max-w-full max-md:h-auto xl:max-w-none flex items-center my-10 ${
-        isMobile ? "min-h-fit" : "max-h-[80vh]"
+        isMobile ? "min-h-fit" : "min-h-fit"
       } overflow-hidden`}
     >
       <div
@@ -92,7 +92,7 @@ export const Hero = () => {
               <motion.div variants={imageVariants} className="w-full h-full">
                 <AspectRatio ratio={1 / 1} className="w-full">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fad85a15d3e71fec6d16c3bd833258013914a103d?format=webp&quality=80"
+                    src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fb9c649bad98d4e1faf236bc2d90887c6?format=webp&quality=80"
                     alt="Therapy Session 1"
                     className="object-contain w-full h-full"
                   />
