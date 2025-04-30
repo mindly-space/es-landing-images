@@ -15,7 +15,7 @@ export const ContentSection: React.FC = () => {
 
   // Function to open WhatsApp chat
   const openWhatsApp = () => {
-    window.open("https://wa.me/your-number-here", "_blank");
+    window.open("https://wa.me/message/G5DAEE7FLTNGD1", "_blank");
   };
 
   // The CTA link to be added to buttons
