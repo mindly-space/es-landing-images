@@ -112,7 +112,7 @@ export const Hero = () => {
             <div className="flex w-full flex-col text-white font-normal text-center">
               <motion.h1
                 variants={itemVariants}
-                className="text-[36px] leading-[120%] font-delay text-center max-md:text-[28px] max-md:leading-[120%]"
+                className="text-[36px] leading-[120%] font-dela text-center max-md:text-[28px] max-md:leading-[120%]"
               >
                 {isEnglish
                   ? "Mindly — your best online therapist. Therapy made easier than ever"

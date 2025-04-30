@@ -137,7 +137,7 @@ export const ComparisonTable = () => {
             <tr className="text-center">
               <th className="text-left pb-0 w-1/2"></th>
               <th className="pb-0 w-1/4">
-                <div className="bg-[#3998E6] text-center px-4 rounded-t-[24px] w-full py-[28px]">
+                <div className="bg-[#3998E6] text-center px-md-4 rounded-t-[24px] w-full py-[28px]">
                   {isMobile ? (
                     <img
                       src={userProvidedLogo}
