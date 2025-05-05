@@ -51,7 +51,7 @@ export const Hero = () => {
         } items-stretch max-md:w-full w-full max-w-[1328px] mx-auto xl:max-w-none xl:px-0 xl:justify-between`}
       >
         {isMobile && (
-          <div className="w-full flex justify-center gap-4 scale-[0.9] mb-6">
+          <div className="w-full flex justify-center gap-4 scale-[0.9] mb-md-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
