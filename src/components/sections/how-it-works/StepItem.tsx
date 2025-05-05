@@ -52,11 +52,11 @@ export const StepItem: React.FC<StepItemProps> = ({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
       whileHover={{ scale: 1.01 }}
-      className={`step-item p-6 rounded-xl transition-all cursor-pointer relative ${
+      className={`${isMobile ? "h-[94px]" : ""} step-item p-6 rounded-xl transition-all cursor-pointer relative ${
         isActive ? "bg-white" : "bg-blue-800/20 hover:bg-blue-800/30"
       }`}
     >
-      <div className="flex items-start">
+      <div className="flex items-start h-full">
         {!hiddenNumber && (
           <span className={`step-number font-dela text-3xl mr-3 transition-colors min-w-[40px] ${
             isActive ? "text-[#212121]" : "text-white"
@@ -64,7 +64,7 @@ export const StepItem: React.FC<StepItemProps> = ({
             {step.id}
           </span>
         )}
-        <div>
+        <div className={`${isMobile ? 'flex items-center justify-center flex-col h-full' : ''}`}>
           <h3 className={`step-title font-dela text-[20px] font-semibold leading-[120%] mb-2 flex items-center ${
             isActive ? "text-[#212121]" : "text-white"
           }`}>

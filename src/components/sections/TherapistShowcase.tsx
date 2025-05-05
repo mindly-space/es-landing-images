@@ -96,7 +96,7 @@ const specialists: {
         "https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/22f6436621f61d35494f05c8ef4e7b42788c5107?placeholderIfAbsent=true",
       specialties: ["Psicólogo", "Psicoterapeuta"],
       profileUrl:
-        "https://app.mindlyspace.com/tabs/psychologist-profile/56CGhl",
+        "https://app.mindlyspace.com/s/56CGhl",
       id: "bx8TtzbrjdNpGntYKEUEzRL0O3L2",
     },
   ],
@@ -183,7 +183,7 @@ const specialists: {
         "https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/22f6436621f61d35494f05c8ef4e7b42788c5107?placeholderIfAbsent=true",
       specialties: ["Psychologist", "Psychotherapist"],
       profileUrl:
-        "https://app.mindlyspace.com/tabs/psychologist-profile/56CGhl",
+        "https://app.mindlyspace.com/s/56CGhl",
       id: "bx8TtzbrjdNpGntYKEUEzRL0O3L2",
     },
   ],

@@ -6,6 +6,9 @@ on:
 
 jobs:
   deploy:
+    environment:
+      name: development
+
     name: Deploy
     runs-on: ubuntu-latest
     steps:
@@ -30,6 +33,8 @@ jobs:
 
       - name: Build
         run: npm run build:dev
+        env:
+          VITE_MIXPANEL_API_KEY: ${{ secrets.VITE_MIXPANEL_API_KEY }}
 
       - name: Deploy to Firebase Hosting
         uses: w9jds/firebase-action@v12.8.0

@@ -111,7 +111,7 @@ export const MapSection = () => {
         >
           <div className="relative map-container">
             <img
-              src="https://raw.githubusercontent.com/mindly-space/es-landing-images/b89ee670371004da3cf0d4f7328303619f9df2a4/images/map.svg"
+              src="https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F6a1d0ec0baa54b018e9ad757b8c19536"
               alt="World map showing Mindly's global presence"
               className="w-full h-auto"
             />

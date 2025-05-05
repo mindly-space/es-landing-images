@@ -7,9 +7,10 @@ import {
   type CarouselApi
 } from "@/components/ui/carousel";
 import { ReviewCard } from "./ReviewCard";
+import { Review } from "@/types/reviews";
 
 interface MobileReviewsCarouselProps {
-  reviews: any[];
+  reviews: Review[];
   activeIndex: number;
   setActiveIndex: (index: number) => void;
   carouselApi: CarouselApi | undefined;
@@ -23,14 +24,13 @@ export const MobileReviewsCarousel: React.FC<MobileReviewsCarouselProps> = ({
   carouselApi,
   setCarouselApi
 }) => {
-  // Set up auto-scrolling every 4 seconds
   useEffect(() => {
     if (!carouselApi) return;
     
     const autoplayInterval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % reviews.length;
       setActiveIndex(nextIndex);
-      carouselApi.scrollTo(nextIndex);
+      // carouselApi.scrollTo(nextIndex);
     }, 4000);
     
     return () => clearInterval(autoplayInterval);
@@ -41,14 +41,27 @@ export const MobileReviewsCarousel: React.FC<MobileReviewsCarouselProps> = ({
     if (!carouselApi) return;
 
     const onSelect = () => {
-      setActiveIndex(carouselApi.selectedScrollSnap());
+      // setActiveIndex(carouselApi.selectedScrollSnap());
+      const currentIndex = carouselApi.selectedScrollSnap();
+      if (currentIndex !== activeIndex) {
+        setActiveIndex(currentIndex);
+      }
     };
 
     carouselApi.on("select", onSelect);
     return () => {
       carouselApi.off("select", onSelect);
     };
-  }, [carouselApi, setActiveIndex]);
+  }, [carouselApi, activeIndex, setActiveIndex]);
+
+  // Sync carousel with activeIndex changes
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    if (carouselApi.selectedScrollSnap() !== activeIndex) {
+      carouselApi.scrollTo(activeIndex);
+    }
+  }, [activeIndex, carouselApi]);
 
   return (
     <div className="mt-10">
@@ -72,7 +85,7 @@ export const MobileReviewsCarousel: React.FC<MobileReviewsCarouselProps> = ({
             key={index}
             onClick={() => {
               setActiveIndex(index);
-              carouselApi?.scrollTo(index);
+              // carouselApi?.scrollTo(index);
             }}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === activeIndex ? "bg-[#013A59]" : "bg-gray-200"

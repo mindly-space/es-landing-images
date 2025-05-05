@@ -14,6 +14,7 @@ const CategoryCard = ({ image, title, color, eventName }) => {
   const ctaLink =
     "https://mindlyspace.com/c91f92cj77?utm_source=website&utm_medium=website&utm_funnel=ESP-241024-US-main-v1";
 
+
   return (
     <a
       href={ctaLink}
@@ -63,42 +64,42 @@ export const Categories = () => {
   const categories = [
     {
       image:
-        "/lovable-uploads/e57d3911-3f49-4e72-8310-eab6acc790de.png?format=webp&quality=80",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F01524abbd7c34746bb8414e67e1406f4?format=webp&quality=80",
       title: isEnglish ? "Stress and burnout" : "Estrés y agotamiento",
       color: "rgba(1,58,89,1)",
       eventName: "stress&burnout",
     },
     {
       image:
-        "/lovable-uploads/a551d4bb-7efb-4590-9e10-9318e93ee9ba.png?format=webp&quality=80",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F72ba45e10df4406e844d82d922ccd512?format=webp&quality=80",
       title: isEnglish ? "Anxiety" : "Ansiedad",
       color: "rgba(1,76,89,1)",
       eventName: "anxiety",
     },
     {
       image:
-        "/lovable-uploads/0d6b42c4-95f2-421d-8f00-affbefce3724.png?format=webp&quality=80",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F1c5f096f7f184212a6e6fcfc93b42172?format=webp&quality=80",
       title: isEnglish ? "Depression" : "Depresión",
       color: "rgba(1,35,89,1)",
       eventName: "depression",
     },
     {
       image:
-        "/lovable-uploads/7a7b2fe9-bd44-4d63-ac46-1a586fdb0c09.png?format=webp&quality=80",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fe9b4f6d9632a4edfb944df93a650e28d?format=webp&quality=80",
       title: isEnglish ? "Loss and grief" : "Pérdida y duelo",
       color: "rgba(4,1,89,1)",
       eventName: "loss&grief",
     },
     {
       image:
-        "/lovable-uploads/5321d2a3-6b5d-4a6e-b63b-672a9a8da2f5.png?format=webp&quality=80",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Fcce949b643ef41989335c5d7257cce04?format=webp&quality=80",
       title: isEnglish ? "Relationship issues" : "Problemas de relaciones",
       color: "rgba(84,25,57,1)",
       eventName: "relationship",
     },
     {
       image:
-        "/lovable-uploads/9b8e981c-003a-4b65-bcf5-6e401bf29ae5.png?format=webp&quality=80",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2F641fe5f2429c4111bdef1895cd11321f?format=webp&quality=80",
       title: isEnglish ? "Immigration trauma" : "Trauma por migración",
       color: "rgba(44,108,114,1)",
       eventName: "immigration",
