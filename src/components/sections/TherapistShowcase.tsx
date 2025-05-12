@@ -83,7 +83,7 @@ const specialists: {
       country: "🇻🇪",
       experience: "1 año",
       image:
-        "https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/bffe45022cb9c9f735e84139f39887a2bf116803?placeholderIfAbsent=true",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Ff2fc4ffef08043a29e7d553aa7dcffca?placeholderIfAbsent=true",
       specialties: ["Psicólogo", "Terapeuta Gestalt"],
       profileUrl: "https://app.mindlyspace.com/s/jSspkf",
       id: "lBIhVHDg2qVMQwvuBnv4BuMBTrC3",
@@ -170,7 +170,7 @@ const specialists: {
       country: "🇻🇪",
       experience: "1 year",
       image:
-        "https://cdn.builder.io/api/v1/image/assets/be084a5d389246af8d6693ab4173d610/bffe45022cb9c9f735e84139f39887a2bf116803?placeholderIfAbsent=true",
+        "https://cdn.builder.io/api/v1/image/assets%2Fbe084a5d389246af8d6693ab4173d610%2Ff2fc4ffef08043a29e7d553aa7dcffca?placeholderIfAbsent=true",
       specialties: ["Psychologist", "Gestalt Therapist"],
       profileUrl: "https://app.mindlyspace.com/s/jSspkf",
       id: "lBIhVHDg2qVMQwvuBnv4BuMBTrC3",
